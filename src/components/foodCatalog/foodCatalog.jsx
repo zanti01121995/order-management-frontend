@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import classes from "./foodCatalog.module.css";
+import classes from "./foodcatalog.module.css";
 import { useEffect } from "react";
 
 const FoodCatalog = () => {

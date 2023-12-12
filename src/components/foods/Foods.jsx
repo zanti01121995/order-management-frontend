@@ -1,7 +1,10 @@
 import classes from "./foods.module.css";
 import { foodTypes } from "../../data/data";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Foods = () => {
+  const { token } = useSelector((state) => state.auth);
   return (
     <section id="foods" className={classes.container}>
       <div className={classes.wrapper}>
@@ -10,7 +13,7 @@ const Foods = () => {
         <div className={classes.foods}>
           {foodTypes.map((foodType) => (
             <Link
-              to={`/foods/${foodType.name}`}
+              to={token ? `/foods/${foodType.name}` : "/login"}
               key={foodType.id}
               className={classes.food}
             >

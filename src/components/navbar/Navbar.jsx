@@ -9,11 +9,13 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { products } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
   };
+  console.log("token on nnnnnnnnn", token);
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
@@ -52,8 +54,9 @@ const Navbar = () => {
             <AiOutlineShoppingCart className={classes.cartIcon} />
             <div className={classes.cartQuantity}>{products.length}</div>
           </Link>
+
           <button onClick={handleLogout} className={classes.logout}>
-            Logout
+            {token ? `Logout` : `Login`}
           </button>
         </div>
       </div>

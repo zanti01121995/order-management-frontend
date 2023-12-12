@@ -8,7 +8,8 @@ import Signup from "./components/signup/signup";
 import Create from "./components/create/Create";
 import FoodDetails from "./components/foodDetails/foodDetails";
 import FoodCatalog from "./components/foodCatalog/foodCatalog";
-import Checkout from "./components/checkout/checkout";
+
+import Checkout from "./components/checkout/Checkout";
 import Cart from "./components/cart/Cart";
 
 function App() {
